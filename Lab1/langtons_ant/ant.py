@@ -68,10 +68,10 @@ class LangtonsAntSimulation:
         img.save(output_file, dpi=(10000, 10000))
         
 # Create a simulation with a 1000x1000 grid and 10 ants
-simulation = LangtonsAntSimulation(100, 100, 2)
+simulation = LangtonsAntSimulation(200, 200, 4)
 
 # Run the simulation for 10000 steps
-simulation.simulate(1000)
+simulation.simulate(100000)
 
 # Visualize the result
 simulation.visualize("langtons_ant_simulation.tiff")
