@@ -20,6 +20,7 @@ class Ant():
         self.orientation = randint(0, 7)
         self.isForaging = True
         self.lastPheromone = 0 + 0j
+        self.timeSinceChange = 1
         
     def get_position(self):
         return self.position
@@ -46,11 +47,11 @@ class Ant():
     def turn_around(self):
         self.move_history[0] = self.move_history[1]
         self.move_history[1] = self.get_position()
-        new_orientation = self.get_orientation()+4
+        new_orientation = self.get_orientation() + 4
         self.set_orientation(new_orientation)
     
     def emit_pheromone(self):
-        self.lastPheromone = (1 + 0j) if self.isForaging else (0 + 1j)
+        self.lastPheromone = (1 + 0j) * self.timeSinceChange if self.isForaging else (0 + 1j) * self.timeSinceChange
     
     def get_cells_in_front(self):
         x0, y0 = self.get_position()
@@ -71,14 +72,16 @@ class Ant():
         for c in range(len(cells_with_contents)):
             if cells_with_contents[c][1] == 255 and self.isForaging:
                 self.isForaging = False
-                chosen_cell = self.get_position()
+                self.timeSinceChange = 1
                 self.turn_around()
+                chosen_cell = self.get_position()
                 return chosen_cell
                 
             elif cells_with_contents[c][1] == 128 and self.isForaging is False:
                 self.isForaging = True
-                chosen_cell = self.get_position()
+                self.timeSinceChange = 1
                 self.turn_around()
+                chosen_cell = self.get_position()
                 return chosen_cell
             
             elif cells_with_contents[c][1] == 255 and self.isForaging is False:
@@ -101,19 +104,21 @@ class Ant():
         pheromones = np.array(pheromones)
         
         if self.isForaging:
-            if np.random.rand() < 0.2:
+            if np.random.rand() < 0.4:
                 idx = randint(0, len(pheromones)-1)
             else:
-                idx = np.argmax(pheromones[:, 0])
+                idx = np.argmax(pheromones[:, 1])
         else:
-            if np.random.rand() < 0.2:
+            if np.random.rand() < 0.05:
                 idx = randint(0, len(pheromones)-1)
-            idx = np.argmax(pheromones[:, 1])
+            else:
+                idx = np.argmax(pheromones[:, 0])#bylo zaminione
         
         chosen_cell = cells_with_contents[idx][0] 
         new_orientation = orientation_changes[idx]
         self.move_history[0] = self.move_history[1]
         self.move_history[1] = self.get_position()
         self.set_orientation(self.get_orientation()+new_orientation)
+        self.timeSinceChange = self.timeSinceChange * 0.99
 
         return chosen_cell
