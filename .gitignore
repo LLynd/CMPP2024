@@ -164,3 +164,11 @@ Lab3/results/*
 !Lab3/results/.gitkeep
 !Lab3/results/ants_stats_n200_s500_20240320225421.png
 !Lab3/results/ants_history_n200_s500_20240320225333.mp4
+
+Lab4/__pycache__
+Lab4/results/*
+!Lab4/results/.gitkeep
+
+Lab5/__pycache__
+Lab5/results/*
+!Lab5/results/.gitkeep

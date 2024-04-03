@@ -64,9 +64,9 @@ class Simulation():
         
         self.move_grid[nest_x1:nest_x2, nest_y1:nest_y2] = 128
         self.move_grid[food_x1:food_x2, food_y1:food_y2] = 255
-        self.move_grid[dw*5:dw*6, dh*3:dh*8] = 64#1
-        self.move_grid[dw*4:dw*9, dh*4:dh*5] = 64
-        self.move_grid[dw*2:dw*7, dh*6:dh*7] = 64
+        #self.move_grid[dw*5:dw*6, dh*3:dh*8] = 64
+        #self.move_grid[dw*4:dw*9, dh*4:dh*5] = 64
+        #self.move_grid[dw*2:dw*7, dh*6:dh*7] = 64
         
         if self.boundary == 'periodic':
             self.move_grid[0, :] = 64
@@ -170,7 +170,8 @@ class Simulation():
             self.stats_history[i, 0] = self.get_ants_status().count(True)
             self.stats_history[i, 1] = self.get_ants_status().count(False)
         self.save_stats_plots()
-        self.save_animation()
+        #self.save_animation()
+        self.save_animation_fast()
         print('Done')
 
     def save_animation_fast(self):
