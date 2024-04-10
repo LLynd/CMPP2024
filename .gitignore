@@ -159,6 +159,14 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+Lab1/__pycache__
+Lab1/results/*
+!Lab1/results/.gitkeep
+
+Lab2/__pycache__
+Lab2/results/*
+!Lab2/results/.gitkeep
+
 Lab3/__pycache__
 Lab3/results/*
 !Lab3/results/.gitkeep
@@ -168,7 +176,12 @@ Lab3/results/*
 Lab4/__pycache__
 Lab4/results/*
 !Lab4/results/.gitkeep
+!Lab4/results/lbm_flow_wedge_s15000_re440_v0.1_d20240410045911.mp4
 
 Lab5/__pycache__
 Lab5/results/*
 !Lab5/results/.gitkeep
+
+Lab6/__pycache__
+Lab6/results/*
+!Lab6/results/.gitkeep
