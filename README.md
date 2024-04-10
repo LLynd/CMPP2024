@@ -1,14 +1,14 @@
-**CMPP2024 - Computer Modeling of Physical Phenomena**
+# CMPP2024 - Computer Modeling of Physical Phenomena
 
 ... description
 
-# List of simulations in the repository
+## List of simulations in the repository
 1. Game of life & Langton's ant
 2. Prisoner's dilemma (missing rn)
 3. Ant hive dynamics
 4. Lattice - Boltzmann method in fluid dynamics - Von Karman vortex street
 5. Evolution of cellular automata (missing rn)
 
-# Course and author information
+## Course and author information
 
 ...
