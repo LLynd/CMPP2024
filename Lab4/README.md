@@ -1,10 +1,10 @@
-**Lattice - Boltzmann method in fluid dynamics - Von Karman vortex street**
+# Lattice - Boltzmann method in fluid dynamics - Von Karman vortex street**
 
 ...description...
 
-# How to run:
+## How to run:
 
-# To do:
+## To do:
 - clean up numba implementation, test it out 
 - try out taichi instead of numba
 - add support for longer simulations (different way of storing history)
@@ -19,7 +19,7 @@
 - diagnose and eliminate overflow bugs at high v and/or Re
 - periodic/opposite BC easy switching
 
-# Bibliography:
+## Bibliography:
 - https://www.fuw.edu.pl/~tszawello/cmpp2024/
 - http://fab.cba.mit.edu/classes/864.20/people/filippos/links/final-projects/lbm/index.html
 - https://github.com/Ceyron/machine-learning-and-simulation/blob/main/english/simulation_scripts/lattice_boltzmann_method_python_jax.py
